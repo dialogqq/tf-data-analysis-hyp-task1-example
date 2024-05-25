@@ -15,9 +15,9 @@ def solution(x_success: int,
     ans = False
     
 
-    z_stat, p_val = proportions_ztest([first_success_cnt, second_success_cnt],
-                        [first_sample_size, second_sample_size],
-                        alternative="smaller")
+    z_stat, p_val = proportions_ztest([x_success, y_success],
+                                      [x_cnt, y_cnt],
+                                      alternative="smaller")
 
     if p_val < alpha:
         ans = True
